@@ -1,3 +1,3 @@
 # MIIP
 
-Lorem ipsum.
+Małopolska Infrastruktura Informacji Przestrzennej
