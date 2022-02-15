@@ -1,1 +1,3 @@
-# miip-repo.github.io
+# MIIP
+
+Lorem ipsum.
