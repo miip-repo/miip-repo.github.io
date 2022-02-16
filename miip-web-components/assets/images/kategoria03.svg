@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-144,0)">
+        <g id="kategoria03" transform="matrix(1,0,0,1,144,0)">
+            <rect x="0" y="0" width="64" height="64" style="fill:none;"/>
+            <g transform="matrix(1,0,0,1,0,-2)">
+                <g id="Warstwa-1" serif:id="Warstwa 1">
+                    <path d="M34.016,38.039L29.985,38.039L29.985,29.979L34.016,29.979L34.016,38.039ZM34.016,46.1L29.985,46.1L29.985,42.069L34.016,42.069L34.016,46.1ZM9.831,52.147L54.168,52.147L32,13.853L9.831,52.147Z" style="fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
