@@ -118,7 +118,7 @@
             font-size: 2rem;
             font-weight: 500;
         }
-    `,t([G({type:Array})],Gr.prototype,"statuses",void 0),t([G({type:Object})],Gr.prototype,"chart",void 0),Gr=t([q("event-chart")],Gr);let Jr=class extends st{getTitle(){var t,e;return`${null===(t=this.item)||void 0===t?void 0:t.title}: ${null===(e=this.item)||void 0===e?void 0:e.value}%`}firstUpdated(t){var e,i,s;const n={type:"doughnut",data:{datasets:[{label:"My First dataset",backgroundColor:[null===(e=this.item)||void 0===e?void 0:e.colorRGB,"rgb(255, 255, 255)"],data:[null===(i=this.item)||void 0===i?void 0:i.value,100-((null===(s=this.item)||void 0===s?void 0:s.value)||0)]}]},options:{cutout:"80%",circumference:360,plugins:{legend:{display:!1},title:{display:!1},subtitle:{display:!1},tooltip:{enabled:!1}}}};new mo(this.renderRoot.querySelector("#myChart"),n)}render(){var t,e,i,s;return V`<div class="container" title=${this.getTitle()}>
+    `,t([G({type:Array})],Gr.prototype,"statuses",void 0),t([G({type:Object})],Gr.prototype,"chart",void 0),Gr=t([q("event-chart")],Gr);let Jr=class extends st{getTitle(){var t,e;return`${null===(t=this.item)||void 0===t?void 0:t.title}: ${null===(e=this.item)||void 0===e?void 0:e.value}%`}prepareChartData(){var t,e,i;return{datasets:[{backgroundColor:[null===(t=this.item)||void 0===t?void 0:t.colorRGB,"rgb(255, 255, 255)"],data:[null===(e=this.item)||void 0===e?void 0:e.value,100-((null===(i=this.item)||void 0===i?void 0:i.value)||0)]}]}}firstUpdated(t){const e={type:"doughnut",data:this.prepareChartData(),options:{cutout:"80%",circumference:360,plugins:{legend:{display:!1},title:{display:!1},subtitle:{display:!1},tooltip:{enabled:!1}}}};this.chart=new mo(this.renderRoot.querySelector("#myChart"),e)}updated(){var t;this.chart&&(this.chart.data=this.prepareChartData(),null===(t=this.chart)||void 0===t||t.update())}render(){var t,e,i,s;return V`<div class="container" title=${this.getTitle()}>
             <div class="chart-container">
                 <div class="chart-icon">
                     <img src=${null===(t=this.item)||void 0===t?void 0:t.icon} />
@@ -136,7 +136,7 @@
         .container {
             display: grid;
             grid-template-columns: 64px 1fr;
-            grid-template-areas: "chart text";
+            grid-template-areas: 'chart text';
             gap: 0.25rem;
         }
         .chart-container {
@@ -171,11 +171,7 @@
             color: #333333;
             font-size: 11px;
         }
-    `,t([G({type:Object})],Jr.prototype,"item",void 0),Jr=t([q("event-icon-chart")],Jr);let Zr=class extends st{constructor(){super(...arguments),this.statistics=[]}render(){return V`
-            <div class="container">
-                ${this.statistics.map((t=>V`<event-icon-chart .item=${t} class="full-width"></event-icon-chart>`))}
-            </div> 
-        `}};Zr.styles=et`
+    `,t([G({type:Object})],Jr.prototype,"item",void 0),t([G({type:Object})],Jr.prototype,"chart",void 0),Jr=t([q("event-icon-chart")],Jr);let Zr=class extends st{constructor(){super(...arguments),this.statistics=[]}render(){return V` <div class="container">${this.statistics.map((t=>V`<event-icon-chart .item=${t} class="full-width"></event-icon-chart>`))}</div> `}};Zr.styles=et`
         :host {
             display: block;
         }
@@ -241,7 +237,7 @@
             padding-left: 4px;
             padding-right: 4px;
         }
-    `,t([G({type:Array})],ta.prototype,"statuses",void 0),ta=t([q("event-chart-legend")],ta);let ea=class extends st{constructor(){super(...arguments),this.title="Zgłoszenia z ostatnich 365 dni:",this.topics=[],this.statuses=[],this.otherStatistics=[]}render(){return V` <div class="header"><h4>${this.title}</h4></div>
+    `,t([G({type:Array})],ta.prototype,"statuses",void 0),ta=t([q("event-chart-legend")],ta);let ea=class extends st{constructor(){super(...arguments),this.title="Zgłoszenia z ostatnich 12 miesięcy:",this.topics=[],this.statuses=[],this.otherStatistics=[]}render(){return V` <div class="header"><h4>${this.title}</h4></div>
             <div class="topics">${this.topics.map((t=>V`<topic-card value=${t.value} title=${t.title} icon=${t.icon}></topic-card>`))}</div>
             <div class="container">
                 <event-chart .statuses=${this.statuses}></event-chart>
@@ -251,13 +247,13 @@
         :host {
             display: block;
         }
-        
+
         .header {
             margin-bottom: 1rem;
             padding-bottom: 0.25rem;
-            border-bottom: 1px solid rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         }
-        
+
         h4 {
             margin: 0;
         }
